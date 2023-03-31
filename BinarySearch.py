@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 
-import data
 import math
-
-#print(data.ArrayToSearch)
 
 def BinarySearch(array,target):
     '''Searches a Sorted Array for index of item
@@ -12,8 +9,6 @@ def BinarySearch(array,target):
         return index if item is found. only returns the first item
         returns null if nothing is found'''
     # check if array is array, check if target is valid
-
-
     print(array)
     print(target)
     # create array pointers 
@@ -28,5 +23,3 @@ def BinarySearch(array,target):
         output = 1
     return output
 
-if __name__ == "__main__":
-    BinarySearch(data.ArrayToSearch,data.target)
