@@ -2,7 +2,7 @@
 
 import math
 
-def BinarySearch(array,target):
+def binarysearch(array,target):
     '''Searches a Sorted Array for index of item
         contnues to divides array at midpoint and checks if the number belongs to which array
 
@@ -12,14 +12,13 @@ def BinarySearch(array,target):
     print(array)
     print(target)
     # create array pointers 
-    startIndex = 0
-    endIndex = len(array) - 1
+    startindex = 0
+    endindex = len(array) - 1
     # create output to return
     output = -1
     # while no target is found in array yet
     while output == -1:
-        midwayPointer = math.floor((endIndex - startIndex)/2)
+        midwayPointer = math.floor((endindex - startindex)/2)
         print(midwayPointer)
         output = 1
     return output
-
