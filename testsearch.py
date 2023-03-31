@@ -4,6 +4,7 @@ import search
 import sort
 import extractdata
 import unittest
+import random
 
 # test file extraction 
 class TestExtractData(unittest.TestCase):
@@ -51,6 +52,48 @@ class TestInsertionSort(unittest.TestCase):
         expected = extractdata.file_to_array("sorteddata3")
         # Test passes if function(testcase) == expected
         self.assertEqual(sort.insertionsort(testcase), expected)
+
+# test insertion sort
+class TestBinarySearch(unittest.TestCase):
+    """test insertion sort. 
+    if pass means file managed to sort data correctly"""
+    # setup()
+    def setUp(self):
+        pass # do something before each test are run
+    # teardown
+    def tearDown(self):
+        pass # do something after each test are run
+    # Test 1 - normal 
+    def test_basic(self):
+        testcase = extractdata.file_to_array("sorteddata1")
+        expected = random.randint(0,len(testcase))
+        testkey = testcase[expected]
+        # Test passes if function(testcase) == expected
+        self.assertEqual(search.binarysearch(testcase,testkey), expected)
+    def test_2(self):
+        testcase = extractdata.file_to_array("sorteddata2")
+        expected = random.randint(0,len(testcase))
+        testkey = testcase[expected]
+        # Test passes if function(testcase) == expected
+        self.assertEqual(search.binarysearch(testcase,testkey), expected)
+    def test_3(self):
+        testcase = extractdata.file_to_array("sorteddata3")
+        expected = random.randint(0,len(testcase))
+        testkey = testcase[expected]
+        # Test passes if function(testcase) == expected
+        self.assertEqual(search.binarysearch(testcase,testkey), expected)
+    def test_error_large(self):
+        testcase = extractdata.file_to_array("sorteddata3")
+        expected = None
+        testkey = 99999999999999999999999
+        # Test passes if function(testcase) == expected
+        self.assertEqual(search.binarysearch(testcase,testkey), expected)
+    def test_error_negative(self):
+        testcase = extractdata.file_to_array("sorteddata3")
+        expected = None
+        testkey = -1
+        # Test passes if function(testcase) == expected
+        self.assertEqual(search.binarysearch(testcase,testkey), expected)
 
 # runs all the test
 if __name__ == '__main__':
